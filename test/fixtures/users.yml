@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+johann:
+  name: Johann Chen
+  email: johann@mail.com
+  bio: Programmer
+
+mei:
+  name: Meilin Chen
+  email: mei@mail.com
+  bio: Physician

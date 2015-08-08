@@ -1,0 +1,4 @@
+johann_borrowed_book1:
+  user: johann
+  mybook: meibook1
+  borrowed_at: <%= Time.now %>

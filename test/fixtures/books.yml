@@ -1,0 +1,16 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+bible:
+  title: ESV Bible
+  author: Scholars
+  summary: God's words
+
+love:
+  title: Four Loves
+  author: C.S. Lewis
+  summary: Four kinds of loves
+
+joy:
+  title: Surprised By Joy
+  author: C.S. Lewis
+  summary: How Lewis became a Christian
