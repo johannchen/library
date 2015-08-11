@@ -3,4 +3,8 @@ class Book < ActiveRecord::Base
 
   has_many :mybooks
   has_many :users, :through => :mybooks
+
+  def self.search(search)
+    where("title like '%?'", search) if search
+  end
 end

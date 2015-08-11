@@ -18,6 +18,14 @@ class MybooksTest < Capybara::Rails::TestCase
     end
   end
 
+  test "search book" do
+    fill_in 'search_box', with: "forever"
+    click_button 'Search'
+    within "#search_result" do
+      assert_content page, "You and Me Forever"
+    end
+  end
+
 
   private
   def login(user)

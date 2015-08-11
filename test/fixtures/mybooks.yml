@@ -3,17 +3,23 @@ johannbook1:
   book: bible
   price: 39.99
   condition: Used
-  share: true
+  share: false
 
 johannbook2:
   user: johann
   book: love
   price: 9.99
   condition: Excellent
-  share: false
+  share: true
 
 meibook1:
   user: mei
   book: joy
   price: 19.99
+  share: true
+
+meibook2:
+  user: mei
+  book: marriage
+  price: 0.99
   share: true
