@@ -5,7 +5,8 @@ class BooksController < ApplicationController
   # GET /books
   # GET /books.json
   def index
-    @books = current_user.books
+    @mybooks = current_user.books
+    @borrowed_books = current_user.borrowed_books.includes(:book)
   end
 
   # GET /books/1

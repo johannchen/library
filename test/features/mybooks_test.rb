@@ -1,14 +1,23 @@
 require "test_helper"
 
 class MybooksTest < Capybara::Rails::TestCase
-  test "list my books" do
+  setup do
     user = users(:johann)
     login(user)
-    assert_content page, "Johann Chen"
-    assert_content page, "ESV Bible"
-    assert_content page, "Four Loves"
-    refute_content page, "Surprised By Joy"
   end
+
+  test "list my books" do
+    assert_content page, "Johann Chen"
+    within "#mybooks" do
+      assert_content page, "ESV Bible"
+      assert_content page, "Four Loves"
+      refute_content page, "Surprised By Joy"
+    end
+    within "#borrowed_books" do
+      assert_content page, "Surprised By Joy"
+    end
+  end
+
 
   private
   def login(user)
