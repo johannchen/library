@@ -3,9 +3,11 @@
 johann:
   name: Johann Chen
   email: johann@mail.com
+  password: secret
   bio: Programmer
 
 mei:
   name: Meilin Chen
   email: mei@mail.com
+  password: secret1
   bio: Physician

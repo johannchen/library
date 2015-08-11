@@ -24,8 +24,10 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+#gem 'bcrypt-ruby', '~> 3.1.5'
+#gem 'bcrypt', '~> 3.1.7'
 
+gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 # Use Unicorn as the app server
 # gem 'unicorn'
 
@@ -43,8 +45,9 @@ end
 
 group :test do
   gem 'minitest-rails-capybara'
-  # add color to minitest
-  # gem 'turn'
+  gem 'minitest-reporters'
+  gem 'guard'
+  gem 'guard-minitest'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

@@ -1,10 +1,11 @@
 class BooksController < ApplicationController
+  before_filter :authorize
   before_action :set_book, only: [:show, :edit, :update, :destroy]
 
   # GET /books
   # GET /books.json
   def index
-    @books = Book.all
+    @books = current_user.books
   end
 
   # GET /books/1
