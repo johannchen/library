@@ -8,12 +8,16 @@
 </head>
 <body>
 
+<h1>Church Library</h1>
 <% if current_user %>
   Signed in as <%= current_user.name %> | <%= link_to "Logout", '/logout' %>
 <% else %>
   <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
 <% end %>
 
+<% flash.each do |key, value| %>
+  <div class="alert alert-<%= key %>"><%= value %></div>
+<% end %>
 <%= yield %>
 
 </body>

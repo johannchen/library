@@ -47,13 +47,12 @@ ActiveRecord::Schema.define(version: 20150809050820) do
   add_index "operations", ["user_id"], name: "index_operations_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "name",                  limit: 255
-    t.string   "email",                 limit: 255
-    t.text     "bio",                   limit: 65535
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.string   "password",              limit: 255
-    t.string   "password_confirmation", limit: 255
+    t.string   "name",            limit: 255
+    t.string   "email",           limit: 255
+    t.text     "bio",             limit: 65535
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.string   "password_digest", limit: 255
   end
 
 end

@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 johann:
-  name: Johann Chen
+  name: Johann
   email: johann@mail.com
-  password: secret
+  password_digest: <%= BCrypt::Password.create "Johann" %>
   bio: Programmer
 
 mei:
-  name: Meilin Chen
+  name: Meilin
   email: mei@mail.com
-  password: secret1
+  password_digest: <%= BCrypt::Password.create "Meilin" %>
   bio: Physician
