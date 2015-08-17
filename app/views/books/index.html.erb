@@ -5,11 +5,12 @@
   <%= submit_tag 'Search', name: nil %>
 <% end %>
 
-
 <div id="search_result">
 <% if @books %>
   <% @books.each do |book| %>
-    <p><%= book.title %></p>
+    <p><%= book.title %>
+      <%= button_to "Add Book", action: "create", params: {book_id: book.id} %> 
+    </p>
   <% end %>
 <% end %>
 </div>
@@ -43,6 +44,7 @@
     <tr>
       <th>Title</th>
       <th>Author</th>
+      <th>Borrowed From</th>
     </tr>
   </thead>
 
@@ -51,6 +53,7 @@
       <tr>
         <td><%= bb.book.title %></td>
         <td><%= bb.book.author %></td>
+        <td><%= bb.user.name %></td>
       </tr>
     <% end %>
   </tbody>

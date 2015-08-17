@@ -12,14 +12,20 @@ johannbook2:
   condition: Excellent
   share: true
 
-meibook1:
-  user: mei
+meilinbook1:
+  user: meilin
   book: joy
   price: 19.99
   share: true
 
-meibook2:
-  user: mei
+meilinbook2:
+  user: meilin
   book: marriage
   price: 0.99
+  share: true
+
+meilinbook3:
+  user: meilin
+  book: pray
+  price: 6.99
   share: true

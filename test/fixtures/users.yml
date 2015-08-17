@@ -6,8 +6,8 @@ johann:
   password_digest: <%= BCrypt::Password.create "Johann" %>
   bio: Programmer
 
-mei:
+meilin:
   name: Meilin
-  email: mei@mail.com
+  email: meilin@mail.com
   password_digest: <%= BCrypt::Password.create "Meilin" %>
   bio: Physician

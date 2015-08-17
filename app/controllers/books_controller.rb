@@ -7,7 +7,7 @@ class BooksController < ApplicationController
   def index
     @books = Book.search(params[:search_term])
     @mybooks = current_user.books
-    @borrowed_books = current_user.borrowed_books.includes(:book)
+    @borrowed_books = current_user.borrowed_books.includes(:book).includes(:user)
   end
 
   # GET /books/1
@@ -27,17 +27,9 @@ class BooksController < ApplicationController
   # POST /books
   # POST /books.json
   def create
-    @book = Book.new(book_params)
-
-    respond_to do |format|
-      if @book.save
-        format.html { redirect_to @book, notice: 'Book was successfully created.' }
-        format.json { render :show, status: :created, location: @book }
-      else
-        format.html { render :new }
-        format.json { render json: @book.errors, status: :unprocessable_entity }
-      end
-    end
+    book = Book.find(params[:book_id])
+    current_user.books << book if book
+    redirect_to books_path
   end
 
   # PATCH/PUT /books/1

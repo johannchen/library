@@ -15,6 +15,7 @@ class MybooksTest < Capybara::Rails::TestCase
     end
     within "#borrowed_books" do
       assert_content page, "Surprised By Joy"
+      assert_content page, "Meilin"
     end
   end
 
@@ -24,14 +25,5 @@ class MybooksTest < Capybara::Rails::TestCase
     within "#search_result" do
       assert_content page, "You and Me Forever"
     end
-  end
-
-  private
-  def login(user)
-    visit '/login'
-    fill_in :email, with: user.email
-    fill_in :password, with: user.name
-    click_button 'Submit'
-    assert_equal current_path, books_path
   end
 end
