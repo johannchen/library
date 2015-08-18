@@ -11,14 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150817064727) do
+ActiveRecord::Schema.define(version: 20150818072342) do
 
   create_table "books", force: :cascade do |t|
-    t.string   "title",      limit: 255
-    t.string   "author",     limit: 255
-    t.text     "summary",    limit: 65535
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.string   "title",          limit: 255
+    t.string   "authors",        limit: 255
+    t.text     "description",    limit: 65535
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.string   "publisher",      limit: 255
+    t.date     "published_date"
+    t.string   "isbn_10",        limit: 255
+    t.string   "isbn_13",        limit: 255
+    t.integer  "page_count",     limit: 4
+    t.string   "image_link",     limit: 255
+    t.string   "preview_link",   limit: 255
+    t.string   "google_id",      limit: 255
   end
 
   create_table "mybooks", force: :cascade do |t|

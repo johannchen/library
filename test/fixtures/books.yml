@@ -2,25 +2,25 @@
 
 bible:
   title: ESV Bible
-  author: Scholars
-  summary: God's words
+  authors: Scholars
+  description: God's words
 
 love:
   title: Four Loves
-  author: C.S. Lewis
-  summary: Four kinds of loves
+  authors: C.S. Lewis
+  description: Four kinds of loves
 
 joy:
   title: Surprised By Joy
-  author: C.S. Lewis
-  summary: How Lewis became a Christian
+  authors: C.S. Lewis
+  description: How Lewis became a Christian
 
 marriage:
   title: You and Me Forever
-  author: Francis Chan
-  summary: Marriage for eternity
+  authors: Francis Chan
+  description: Marriage for eternity
 
 pray:
   title: Too busy not to pray
-  author: Bill Hybels
-  summary: Book about prayer
+  authors: Bill Hybels
+  description: Book about prayer

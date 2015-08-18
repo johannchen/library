@@ -24,11 +24,28 @@ class BooksController < ApplicationController
   def edit
   end
 
-  # POST /books
-  # POST /books.json
   def create
-    book = Book.find(params[:book_id])
-    current_user.books << book if book
+    book = Book.find_by_id(params[:book_id])
+    if book  
+      current_user.books << book
+    else
+      # insert google book to Book
+      gbook= GoogleBooks.search(params[:book_id]).first
+      mybook = Book.new
+      mybook.google_id = gbook.id
+      mybook.title = gbook.title
+      mybook.authors = gbook.authors
+      mybook.description = gbook.description
+      mybook.publisher = gbook.publisher
+      mybook.published_date = gbook.published_date
+      mybook.isbn_10 = gbook.isbn_10
+      mybook.isbn_13 = gbook.isbn_13
+      mybook.image_link = gbook.image_link
+      mybook.preview_link = gbook.preview_link
+      mybook.save
+      # assign inserted book to user
+      current_user.books << mybook
+    end
     redirect_to books_path
   end
 
@@ -64,6 +81,6 @@ class BooksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def book_params
-      params.require(:book).permit(:title, :author, :summary)
+      params.require(:book).permit(:title, :authors, :description, :publisher)
     end
 end

@@ -27,10 +27,10 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password
-#gem 'bcrypt-ruby', '~> 3.1.5'
 gem 'bcrypt', '~> 3.1.7'
 
-#gem 'wdm', '>= 0.1.0' if Gem.win_platform?
+# Search Google Book API
+gem 'googlebooks'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
@@ -48,6 +48,7 @@ end
 
 group :development do
   gem "better_errors"
+  gem "awesome_print"
 end
 
 group :test do
