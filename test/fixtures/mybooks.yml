@@ -1,31 +1,26 @@
 johannbook1:
   user: johann
   book: bible
-  price: 39.99
   condition: Used
-  share: false
+  exchange: false
 
 johannbook2:
   user: johann
   book: love
-  price: 9.99
   condition: Excellent
-  share: true
+  exchange: true
 
 meilinbook1:
   user: meilin
   book: joy
-  price: 19.99
-  share: true
+  exchange: true
 
 meilinbook2:
   user: meilin
   book: marriage
-  price: 0.99
-  share: true
+  exchange: true
 
 meilinbook3:
   user: meilin
   book: pray
-  price: 6.99
-  share: true
+  exchange: true

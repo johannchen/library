@@ -1,9 +1,0 @@
-johann_borrowed_book1:
-  user: johann
-  mybook: meilinbook1
-  borrowed_at: <%= Time.now %>
-
-johann_requested_book1:
-  user: johann
-  mybook: meilinbook2
-  requested_at: <%= Time.now %>

@@ -38,28 +38,6 @@
     <% end %>
   </tbody>
 </table>
-
-<h1>My Borrowed Books</h1>
-<table id="borrowed_books">
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Authors</th>
-      <th>Borrowed From</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @borrowed_books.each do |bb| %>
-      <tr>
-        <td><%= bb.book.title %></td>
-        <td><%= bb.book.authors %></td>
-        <td><%= bb.user.name %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
 <br>
 
 <%= link_to 'New Book', new_book_path %>

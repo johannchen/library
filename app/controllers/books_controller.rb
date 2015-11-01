@@ -7,7 +7,6 @@ class BooksController < ApplicationController
   def index
     @books = Book.search(params[:search_term])
     @mybooks = current_user.books
-    @borrowed_books = current_user.borrowed_books.includes(:book).includes(:user)
   end
 
   # GET /books/1
@@ -26,7 +25,7 @@ class BooksController < ApplicationController
 
   def create
     book = Book.find_by_id(params[:book_id])
-    if book  
+    if book
       current_user.books << book
     else
       # insert google book to Book
