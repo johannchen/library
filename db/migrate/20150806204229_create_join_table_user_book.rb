@@ -6,10 +6,7 @@ class CreateJoinTableUserBook < ActiveRecord::Migration
       t.belongs_to :user, index: true
       t.belongs_to :book, index: true
       t.string :condition
-      t.float :price
-      t.boolean :share, default: true
-      t.datetime :sold_at
-      t.string :status
+      t.boolean :exchange, default: true
       t.timestamps null: false
     end
   end

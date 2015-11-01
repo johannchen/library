@@ -11,57 +11,52 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150818072342) do
+ActiveRecord::Schema.define(version: 20150807053116) do
 
   create_table "books", force: :cascade do |t|
-    t.string   "title",          limit: 255
-    t.string   "authors",        limit: 255
-    t.text     "description",    limit: 65535
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
-    t.string   "publisher",      limit: 255
+    t.string   "title"
+    t.string   "authors"
+    t.text     "description"
+    t.string   "publisher"
     t.date     "published_date"
-    t.string   "isbn_10",        limit: 255
-    t.string   "isbn_13",        limit: 255
-    t.integer  "page_count",     limit: 4
-    t.string   "image_link",     limit: 255
-    t.string   "preview_link",   limit: 255
-    t.string   "google_id",      limit: 255
+    t.string   "isbn_10"
+    t.string   "isbn_13"
+    t.integer  "page_count"
+    t.string   "image_link"
+    t.string   "preview_link"
+    t.string   "google_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
-  create_table "mybooks", force: :cascade do |t|
-    t.integer  "user_id",    limit: 4
-    t.integer  "book_id",    limit: 4
-    t.string   "condition",  limit: 255
-    t.float    "price",      limit: 24
-    t.boolean  "share",                  default: true
-    t.datetime "sold_at"
-    t.string   "status",     limit: 255
-    t.datetime "created_at",                            null: false
-    t.datetime "updated_at",                            null: false
-  end
-
-  add_index "mybooks", ["book_id"], name: "index_mybooks_on_book_id", using: :btree
-  add_index "mybooks", ["user_id"], name: "index_mybooks_on_user_id", using: :btree
-
-  create_table "operations", id: false, force: :cascade do |t|
-    t.integer  "user_id",      limit: 4
-    t.integer  "mybook_id",    limit: 4
-    t.datetime "borrowed_at"
-    t.datetime "returned_at"
+  create_table "exchanges", force: :cascade do |t|
+    t.integer  "requester_id"
+    t.integer  "responder_id"
+    t.integer  "requester_book_id"
+    t.integer  "responder_book_id"
     t.datetime "requested_at"
+    t.datetime "exchanged_at"
   end
 
-  add_index "operations", ["mybook_id"], name: "index_operations_on_mybook_id", using: :btree
-  add_index "operations", ["user_id"], name: "index_operations_on_user_id", using: :btree
+  create_table "mybooks", id: false, force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "book_id"
+    t.string   "condition"
+    t.boolean  "exchange",   default: true
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  add_index "mybooks", ["book_id"], name: "index_mybooks_on_book_id"
+  add_index "mybooks", ["user_id"], name: "index_mybooks_on_user_id"
 
   create_table "users", force: :cascade do |t|
-    t.string   "name",            limit: 255
-    t.string   "email",           limit: 255
-    t.text     "bio",             limit: 65535
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
-    t.string   "password_digest", limit: 255
+    t.string   "name"
+    t.string   "email"
+    t.string   "password_digest"
+    t.text     "bio"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
 end
